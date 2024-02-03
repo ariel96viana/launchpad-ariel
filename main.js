@@ -1,17 +1,13 @@
 function tocarSom(soundSelector) {
   const element = document.querySelector(soundSelector);
-  if (element === null) {
-    console.log("Elemento não encontrado");
-  } else if (element.localName != "audio") {
-    console.log("Elemento  inválido");
-  } else {
+  if (element && element.localName === "audio") {
     element.play();
+  } else {
+    console.log("Elemento ou seletor inválido");
   }
 }
 
 const buttonList = document.querySelectorAll(".tecla");
-
-const teclas = ["q", "w", "e", "a", "s", "d", "f", "g", "h"];
 
 for (let counter = 0; counter < buttonList.length; counter++) {
   const button = buttonList[counter];
